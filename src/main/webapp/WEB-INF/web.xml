@@ -1,0 +1,35 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+	<display-name>Archetype Created Web Application</display-name>
+	<filter>
+		<filter-name>clientSSOFilter</filter-name>
+		<filter-class>org.core.client.filters.ClientSSOFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>clientSSOFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<servlet>
+		<servlet-name>OAuthClientTest</servlet-name>
+		<display-name>OAuthClientTest</display-name>
+		<description></description>
+		<servlet-class>org.core.client.servlet.OAuthClientTest</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>OAuthGetAccessToken</servlet-name>
+		<display-name>OAuthGetAccessToken</display-name>
+		<description></description>
+		<servlet-class>org.core.client.servlet.OAuthGetAccessToken</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>OAuthClientTest</servlet-name>
+		<url-pattern>/test</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>OAuthGetAccessToken</servlet-name>
+		<url-pattern>/accessToken</url-pattern>
+	</servlet-mapping>
+</web-app>
