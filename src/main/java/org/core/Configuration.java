@@ -21,11 +21,13 @@ public class Configuration {
 
 	private Configuration() throws FileNotFoundException {
 		try {
-			InputStream input = getClass().getClassLoader().getResourceAsStream("localConfig.properties");
+			InputStream input = getClass().getClassLoader()
+					.getResourceAsStream("localConfig.properties");
 			appProperties.load(input);
 		} catch (Exception e) {
 			logger.error("initialize", e);
-			throw new FileNotFoundException("Nie znaleziono pliku konfiguracyjnego!");
+			throw new FileNotFoundException(
+					"Nie znaleziono pliku konfiguracyjnego!");
 		}
 	}
 
@@ -40,9 +42,25 @@ public class Configuration {
 		return instanse;
 	}
 
-	public String getParameterValue(final String parameter) {
+	public String getParameterValue(final Parameter parameter) {
 		Configuration.getConfiguration();
-		return Configuration.appProperties.getProperty(parameter);
+		return Configuration.appProperties.getProperty(parameter.value);
+	}
+
+	public enum Parameter {
+		ClientId("clientId"), 
+		ClientSecret("clientSecret"),
+		AccessTokenUrl("accessTokenUrl");
+		
+		private String value;
+
+		Parameter(final String value) {
+			this.value = value;
+		}
+
+//		public String getValue() {
+//			return value;
+//		}
 	}
 
 }

@@ -16,12 +16,15 @@ import org.apache.oltu.oauth2.common.OAuthProviderType;
 import org.apache.oltu.oauth2.common.exception.OAuthProblemException;
 import org.apache.oltu.oauth2.common.exception.OAuthSystemException;
 import org.apache.oltu.oauth2.common.message.types.GrantType;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Servlet implementation class OAuthGetAccessToken
  */
 public class OAuthGetAccessToken extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static final Logger logger = LoggerFactory.getLogger(OAuthGetAccessToken.class);
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -36,7 +39,7 @@ public class OAuthGetAccessToken extends HttpServlet {
 	 */
 	@Override
 	protected void doGet(final HttpServletRequest req, final HttpServletResponse response) throws ServletException, IOException {
-		
+		logger.debug("doGet|START");
 		String code = req.getParameter("code");
 		OAuthClientRequest request;
 		try {
@@ -63,12 +66,11 @@ public class OAuthGetAccessToken extends HttpServlet {
 			pw.flush();
 			pw.close();
 		} catch (OAuthSystemException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.debug("doGet", e);
 		} catch (OAuthProblemException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			logger.debug("doGet", e);
 		}	
+		logger.debug("doGet|STOP");
 	}
 
 	/**
@@ -76,7 +78,8 @@ public class OAuthGetAccessToken extends HttpServlet {
 	 */
 	@Override
 	protected void doPost(final HttpServletRequest request, final HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+		logger.debug("doPost|START");
+		logger.error("Nie powinno tutaj wejœæ!");
 	}
 
 }

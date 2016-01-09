@@ -26,9 +26,10 @@ public enum OAuthProviderType {
 			"facebook", 
 			"https://graph.facebook.com/oauth/authorize", 
 			"https://graph.facebook.com/oauth/access_token"),
+			
 	MYAUTH("myauth",
-			"http://oauthgate.com:8080/server/auth",
-			"http://oauthgate.com:8080/server/access_token"),
+			"http://oauthgate.com:8080/server/oauth/authorizationcode",
+			"http://oauthgate.com:8080/server/oauth/accesstoken"),
 	
 	FOURSQUARE(
 			"foursquare", 

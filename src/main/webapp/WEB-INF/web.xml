@@ -24,6 +24,13 @@
 		<description></description>
 		<servlet-class>org.core.client.servlet.OAuthGetAccessToken</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>Index</servlet-name>
+		<display-name>Index</display-name>
+		<jsp-file>/index.jsp</jsp-file>
+		<description></description>
+		<servlet-class>org.core.client.servlet.Index</servlet-class>
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>OAuthClientTest</servlet-name>
 		<url-pattern>/test</url-pattern>
@@ -31,5 +38,9 @@
 	<servlet-mapping>
 		<servlet-name>OAuthGetAccessToken</servlet-name>
 		<url-pattern>/accessToken</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Index</servlet-name>
+		<url-pattern>/index</url-pattern>
 	</servlet-mapping>
 </web-app>

@@ -46,6 +46,11 @@
 			<version>4.3.6</version>
 		</dependency>
 		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+		<dependency>
 			<groupId>org.application.oauth2</groupId>
 			<artifactId>oauth2-common</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
